@@ -21,14 +21,14 @@ const columnsFromBackend = {
     name: "To do",
     items: []
   },
-  [uuid()]: {
+ /*  [uuid()]: {
     name: "In Progress",
     items: []
   },
   [uuid()]: {
     name: "Done",
     items: []
-  }
+  } */
 };
 
 const onDragEnd = (result, columns, setColumns) => {
@@ -71,7 +71,8 @@ const onDragEnd = (result, columns, setColumns) => {
 function App() {
   const [columns, setColumns] = useState(columnsFromBackend);
   return (
-    <div style={{ display: "flex", justifyContent: "center", height: "100%" }}>
+    <div style={{ display: "flex", justifyContent: "center", height: "100%",  overflow: 'scroll'
+ }}>
       <DragDropContext
         onDragEnd={result => onDragEnd(result, columns, setColumns)}
       >
